@@ -29,7 +29,11 @@ public class App
     private static void printElements(NodeList childNodes) {
         for(int i = 0; i<childNodes.getLength(); i++){
             if(childNodes.item(i) instanceof Element){
-                System.out.println(((Element) childNodes.item(i)).getTagName());
+                if (((Element) childNodes.item(i)).hasAttribute("Type")) {
+                    System.out.println(((Element) childNodes.item(i)).getTagName() + ": " + ((Element) childNodes.item(i)).getAttribute("Type"));
+                } else {
+                    System.out.println(((Element) childNodes.item(i)).getTagName());
+                }
             }
             if (childNodes.item(i).hasChildNodes()){
                 printElements(childNodes.item(i).getChildNodes());
