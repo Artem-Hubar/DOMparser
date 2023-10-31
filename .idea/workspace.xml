@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b246d745-1175-4d54-a0d7-8e24c5b6256d" name="Changes" comment="add printing all tags">
+    <list default="true" id="b246d745-1175-4d54-a0d7-8e24c5b6256d" name="Changes" comment="add printing tags with attribute &quot;Type&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698781380406</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add printing tags with attribute &quot;Type&quot;">
+      <created>1698781741096</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698781741096</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add parsing first element" />
     <MESSAGE value="add printing all tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="add printing all tags" />
+    <MESSAGE value="add printing tags with attribute &quot;Type&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="add printing tags with attribute &quot;Type&quot;" />
   </component>
 </project>

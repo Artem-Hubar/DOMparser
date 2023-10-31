@@ -16,28 +16,36 @@ import java.io.IOException;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args ) throws ParserConfigurationException, IOException, SAXException {
+public class App {
+    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(new File("order.xml"));
         Element element = document.getDocumentElement();
-        printElements(element.getChildNodes());
+        printElements(element.getChildNodes(), 0);
     }
 
-    private static void printElements(NodeList childNodes) {
-        for(int i = 0; i<childNodes.getLength(); i++){
-            if(childNodes.item(i) instanceof Element){
+    private static void printElements(NodeList childNodes, int tabs) {
+        for (int i = 0; i < childNodes.getLength(); i++) {
+            if (childNodes.item(i) instanceof Element) {
                 if (((Element) childNodes.item(i)).hasAttribute("Type")) {
-                    System.out.println(((Element) childNodes.item(i)).getTagName() + ": " + ((Element) childNodes.item(i)).getAttribute("Type"));
+                    System.out.println(getTabs(tabs) + ((Element) childNodes.item(i)).getTagName() + ": " + ((Element) childNodes.item(i)).getAttribute("Type"));
                 } else {
-                    System.out.println(((Element) childNodes.item(i)).getTagName());
+                    System.out.println(getTabs(tabs) + ((Element) childNodes.item(i)).getTagName());
+                }
+                if (childNodes.item(i).hasChildNodes()) {
+                    printElements(childNodes.item(i).getChildNodes(), tabs + 1);
                 }
             }
-            if (childNodes.item(i).hasChildNodes()){
-                printElements(childNodes.item(i).getChildNodes());
-            }
+
         }
+
+
+    }
+
+    private static String getTabs(int tabs) {
+        String answer = "";
+        answer += "\t".repeat(tabs);
+        return answer;
     }
 }
