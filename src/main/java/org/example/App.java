@@ -3,6 +3,7 @@ package org.example;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -22,6 +23,17 @@ public class App
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(new File("order.xml"));
         Element element = document.getDocumentElement();
-        System.out.println(element);
+        printElements(element.getChildNodes());
+    }
+
+    private static void printElements(NodeList childNodes) {
+        for(int i = 0; i<childNodes.getLength(); i++){
+            if(childNodes.item(i) instanceof Element){
+                System.out.println(((Element) childNodes.item(i)).getTagName());
+            }
+            if (childNodes.item(i).hasChildNodes()){
+                printElements(childNodes.item(i).getChildNodes());
+            }
+        }
     }
 }
