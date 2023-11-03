@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DOM;
 
 
 import org.w3c.dom.Document;
